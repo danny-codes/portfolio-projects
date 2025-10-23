@@ -3,51 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Business Landing</title>
+    <title>Coffee House</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pH6+1m/VB9GjXGzOqFZV4jI+eRzDpsK7Ow+6y+zq1shpXK5u4xvR+4bU1I5b+IYBQ5k0tKH+zv6T9v5yYj/l/w=="/> -->
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Coffee Shop</h1>
+        <!-- <h1>Coffee Shop</h1> -->
+        <!-- <div class="logo">
+                    <img src="./imgs/logo.png" alt="Coffee Corner Logo">
+                </div> -->
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="logo-icon">
+                <path
+                    d="M152-16c-13.3 0-24 10.7-24 24 0 38.9 23.4 59.4 39.1 73.1l1.1 1c16.3 14.3 23.8 21.8 23.8 37.9 0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C183.5 31.7 176 24.1 176 8 176-5.3 165.3-16 152-16zM96 192c-17.7 0-32 14.3-32 32l0 192c0 53 43 96 96 96l192 0c41.8 0 77.4-26.7 90.5-64l5.5 0c70.7 0 128-57.3 128-128S518.7 192 448 192L96 192zM448 384l0-128c35.3 0 64 28.7 64 64s-28.7 64-64 64zM288 8c0-13.3-10.7-24-24-24S240-5.3 240 8c0 38.9 23.4 59.4 39.1 73.1l1.1 1c16.3 14.3 23.8 21.8 23.8 37.9 0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C295.5 31.7 288 24.1 288 8z" />
+            </svg>
+            <span class="logo-text">Coffee House</span>
+        </div>
+        
         <nav>
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" class="header-link">About</a>
+            <a href="#menu" class="header-link">Menu</a>
+            <a href="#contact" class="header-link">Contact</a>
         </nav>
     </header>
 
     <section class="hero" id="hero">
+        <div class="content">
         <h1>Best Coffee in Town</h1>
-        <p>Freshly brewed, served with love.</p>
-        <a href="#menu">Visit Us</a>
+        <p>Freshly brewed, served with love. From rich espressos to creamy lattes, our beans are sourced from the finest farms to ensure every cup delights your senses.</p>
+        <a href="#menu" class="btn">Order now</a>
+        <div class="scroll-indicator">⬇</div>
+        </div>
     </section>
     <section class="about" id="about">
         <h2>About Us</h2>
-        <p>We've been serving the best coffee since 1990...</p>
+        <p>We've been serving the best coffee since 1990. Our passion for coffee is matched only by our dedication to creating a warm and welcoming atmosphere for our customers. Every cup is made with care, using beans roasted to perfection. Whether you're here for a quick espresso or to sit back with a cappuccino, you'll feel right at home in our cozy café.</p>
+        <p>Our team believes in sustainability and supporting local communities. We work closely with coffee farmers to ensure fair practices and premium quality. Come taste the difference in every sip!</p>
     </section>
     <section class="menu" id="menu">
         <h2>Our Menu</h2>
         <div class="menu-items">
-            <div class="menu-item">Espresso — 3$</div>
-            <div class="menu-item">Cappuccino — 4$</div>
+            <div class="menu-item">
+                <img src="imgs/espresso.jpg" alt="Espresso">
+                <div class="card-description">
+                    <h3>Espresso</h3>
+                    <p>Rich, bold espresso shot.</p>
+                    <span>$3</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="imgs/latte.jpg" alt="Latte">
+                <div class="card-description">
+                    <h3>Latte</h3>
+                    <p>Creamy latte with frothed milk.</p>
+                    <span>$4</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="imgs/americano.jpg" alt="Latte">
+                <div class="card-description">
+                    <h3>Americano</h3>
+                    <p>Rich and bold coffee.</p>
+                    <span>$4</span>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="testimonials" id="testimonials">
-        <h2>What People Say</h2>
-        <blockquote>"Best cafe ever!" — Jane</blockquote>
+    <section class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div id="carouselContainer">    
+        <div id="imageContainer">
+            <div class="slide"><img src="./imgs/coffee1.jpg" alt="Coffee cup"></div>
+            <div class="slide"><img src="./imgs/interior1.jpg" alt="Cafe interior"></div>
+            <div class="slide"><img src="./imgs/coffee2.jpg" alt="Latte art"></div>
+            <div class="slide"><img src="./imgs/interior2.jpg" alt="Cafe seating"></div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
     </section>
-    <section class="contact" id="contact">
+    <!-- <section class="testimonials" id="testimonials">
+        <h2>What People Say</h2>
+        <blockquote>"Best coffee ever!" — Jane</blockquote>
+    </section> -->
+    <!-- <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <p>123 Main Street</p>
         <p>Open daily: 8am — 8pm</p>
+    </section> -->
+    <!-- <section class="location" id="location">
+        <h2>Location & Hours</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE" width="100%" height="300"
+                style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <p><strong>Hours:</strong> Mon–Fri 8am–6pm, Sat–Sun 9am–4pm</p>
+    </section> -->
+    <!-- <section class="location" id="location">
+        <h2>Location & Hours</h2>
+        <div class="location-grid">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE" width="100%" height="300"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="hours">
+                <h3>Hours</h3>
+                <ul>
+                    <li>Mon–Fri: 8am–6pm</li>
+                    <li>Sat–Sun: 9am–4pm</li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+    <section class="location" id="location">
+        <h2>Location & Hours</h2>
+        <div class="location-block">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE" width="100%" height="300"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="hours">
+                <p><strong>Hours:</strong></p>
+                <p>Mon–Fri: 8am–6pm</p>
+                <p>Sat–Sun: 9am–4pm</p>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2025 Best Coffee</p>
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="mail@example.com">
+    
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Type your message here"></textarea>
+    
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Or call us at: <a href="tel:+1234567890">+1 234 567 890</a></p>
+    </section>
+    <!-- <footer>
+        <div class="footer-content">
+            <p class="logo-text">Coffee House</p>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p>&copy; 2025 Coffee House. All rights reserved.</p>
+        </div>
+    </footer> -->
+    <svg class="wave-top" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="currentColor" fill-opacity="1" d="M0,128L80,149.3C160,171,320,213,480,197.3C640,181,800,107,960,96C1120,85,1280,139,1360,165.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Best coffee in town, freshly brewed and served with love since 1990.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email" />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Mon-Fri: 8am - 6pm</li>
+                    <li>Sat: 9am - 5pm</li>
+                    <li>Sun: Closed</li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 Your Coffee Shop. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
