@@ -277,7 +277,9 @@ a:visited {
 
 #carouselContainer {
     background-color: rgb(103, 103, 103);
-    width: clamp(300px, 90%, 1200px);
+    /* width: clamp(300px, 90%, 1200px); */
+    width: clamp(250px, 90%, 800px);
+    /* width: clamp(250px, 90%, 900px); */
     aspect-ratio: 16 / 9;
     margin: 25px auto;
     position: relative;
@@ -359,6 +361,11 @@ a:visited {
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2rem;
 }
 
 .location {
