@@ -94,3 +94,15 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   alert('Message sent! (demo)');
 });
+
+// button to expand/collapse read more text
+
+document.addEventListener("click", function (e) {
+  if (!e.target.matches(".about-toggle")) return;
+  const btn = e.target;
+  const more = document.querySelector('.about-more');
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!expanded));
+  btn.textContent = expanded ? 'Read more' : 'Show less';
+  more.style.display = expanded ? 'none' : 'block';
+});
