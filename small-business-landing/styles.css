@@ -198,7 +198,6 @@ section {
     background-position: right center;
 }
 
-
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -606,23 +605,24 @@ section {
 .contact button {
     padding: 14px;
     border: none;
-    background-color: var(--brown);
     color: white;
-    font-size: 1em;
+    font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
-    background-color: var(--coffee);
     color: var(--almond);
     font-weight: 600;
     margin-top: 10px;
-    transition: all 0.3s ease;
+    background: linear-gradient(90deg, var(--coffee), var(--brown));
+    background-size: 200% 100%;
+    transition: all 0.4s ease;
+    padding: 14px 20px;
 }
 
 .contact button:hover {
     background-color: var(--raw-umber);
     transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-position: right center;
+    box-shadow: 0 0 10px var(--raw-umber);
 }
 
 .contact p {
@@ -658,9 +658,68 @@ section {
     color: var(--raw-umber);
 }
 
-@media (max-width: 500px) {
+@media (min-width: 900px) {
     .contact {
-        padding: 20px 15px;
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact {
+        margin: 20px 18px;
+        padding: 18px 14px;
+    }
+
+    .contact form {
+        gap: 10px;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    .contact textarea {
+        min-height: 80px;
+    }
+
+    .contact button {
+        font-size: 0.95rem;
+        padding: 12px 14px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 540px) {
+    .contact {
+        margin: 24px;
+        padding: 22px 18px;
+    }
+
+    .contact form {
+        gap: 12px;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 0.95rem;
+        padding: 11px 12px;
+    }
+
+    .contact textarea {
+        min-height: 85px;
+    }
+
+    .contact button {
+        font-size: 0.98rem;
+        padding: 13px 16px;
+    }
+}
+
+@media (min-width: 900px) {
+    .contact {
+        margin: 40px auto;
+        padding: 30px 24px;
     }
 }
 
@@ -702,7 +761,6 @@ section {
 .footer-column {
     flex: 1 1 200px;
     padding: 10px 0;
-    /* max-width: 250px; */
     max-width: 200px;
 }
 
