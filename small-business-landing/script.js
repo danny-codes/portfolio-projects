@@ -38,20 +38,11 @@ inputs.forEach(input => {
     }
   });
 
-  // Remove red border once user starts typing
   input.addEventListener('input', () => {
     if(input.classList.contains('invalid') && input.checkValidity()){
       input.classList.remove('invalid');
     }
   });
-});
-
-// form submit message
-
-const form = document.querySelector('form');
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  alert('Message sent! (demo)');
 });
 
 // button to expand/collapse read more text
@@ -64,4 +55,42 @@ document.addEventListener("click", function (e) {
   btn.setAttribute('aria-expanded', String(!expanded));
   btn.textContent = expanded ? 'Read more' : 'Show less';
   more.style.display = expanded ? 'none' : 'block';
+});
+
+// contact form
+
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('contact-form-status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      formStatus.textContent = "Thanks for your submission!";
+      formStatus.style.color = 'green';
+      form.reset();
+    } else {
+      const result = await response.json();
+      if (result.errors) {
+        formStatus.textContent = result.errors.map(error => error.message).join(', ');
+      } else {
+        formStatus.textContent = "Oops! There was a problem submitting your form.";
+      }
+      formStatus.style.color = 'red';
+    }
+  } catch (error) {
+    formStatus.textContent = "Oops! There was a problem submitting your form.";
+    formStatus.style.color = 'red';
+  }
 });
